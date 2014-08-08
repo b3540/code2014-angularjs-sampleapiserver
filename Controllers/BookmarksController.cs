@@ -1,13 +1,11 @@
-﻿using System;
+﻿using SampleAPIServer.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using SampleAPIServer.Models;
+using System.Web.Http.Cors;
 
 namespace SampleAPIServer.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class BookmarksController : ApiController
     {
         public SampleAPIDBContext DB { get; set; }
