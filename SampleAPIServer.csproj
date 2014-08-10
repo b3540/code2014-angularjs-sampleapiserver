@@ -46,6 +46,10 @@
       <HintPath>packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -67,9 +71,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -89,15 +90,6 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\BookmarksController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Bookmark.cs" />
-    <Compile Include="Models\SampleAPIDBContext.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -107,7 +99,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="SampleAPIServerCore\SampleAPIServerCore.fsproj">
+      <Project>{4affa9ba-1f94-414a-97fe-2854105d9654}</Project>
+      <Name>SampleAPIServerCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
